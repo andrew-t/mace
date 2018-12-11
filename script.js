@@ -78,10 +78,13 @@ document.addEventListener('DOMContentLoaded', e => {
 				window.getComputedStyle(berks[standingBerk]).transform;			nonsense.appendChild(document.createTextNode(
 				brexitWords[~~(Math.random() * brexitWords.length)]));
 			nonsenseContainer.appendChild(nonsense);
-			setTimeout(() => nonsense.style.transform =
-				`translate(${Math.random() * 800 - 250}px,
-					${Math.random() * 100 - 230}px)
-				rotate(${Math.random() * 40 - 20}deg)`, 50);
+			setTimeout(() => {
+				nonsense.style.transform =
+					`translate(${Math.random() * 800 - 250}px,
+						${Math.random() * 100 - 230}px)
+					rotate(${Math.random() * 40 - 20}deg)`;
+				nonsense.style.opacity = 1;
+			}, 50);
 			if (nonsenseSpewed >= 500)
 				stopGame();
 		}, 73);
