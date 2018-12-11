@@ -1,0 +1,123 @@
+body { background: #000; }
+
+#house {
+	background: url('house.jpg');
+	width: 820px;
+	height: 546px;
+	overflow: hidden;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	transform-origin: 0 0;
+}
+
+#mace {
+	background: url('mace.png');
+	width: 360px;
+	height: 53px;
+	position: absolute;
+	transition: transform 200ms;
+	transform: translate(-25px, -100px) scale(.75) rotate(45deg);
+	pointer-events: none;
+}
+#mace.smash {
+	transform: translate(-75px, -30px) scale(.75) rotate(0deg);
+}
+
+.that.berk {
+	position: absolute; /* hmm */
+	width: 294px;
+	height: 587px;
+	background: url('sitting-berk.png');
+	pointer-events: none;
+}
+.that.berk.should-shut-up {
+	background: url('standing-berk.png');
+	pointer-events: all;
+}
+
+.that.fox.berk { transform: translate(270px, 27px) scale(.22); }
+.that.mogg.berk { transform: translate(240px, 30px) scale(.25); }
+.that.may.berk { transform: translate(210px, 33px) scale(.28); }
+.that.boris.berk { transform: translate(140px, 40px) scale(.32); }
+.that.davis.berk { transform: translate(110px, 43px) scale(.36); }
+.that.gove.berk { transform: translate(65px, 47px) scale(.4); }
+.that.raab.berk { transform: translate(10px, 50px) scale(.45); }
+
+.that.berk:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 150px;
+	background-size: contain;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	transform: translate(-35px, 150px) rotate(-10deg);
+}
+.that.berk.should-shut-up:after {
+	transform: translate(80px, 0px) rotate(0deg);
+}
+
+.that.berk:after:hover { outline: 5px solid red; }
+.that.fox.berk:after { background-image: url('fox.png'); }
+.that.mogg.berk:after { background-image: url('mogg.png'); }
+.that.may.berk:after { background-image: url('may.png'); }
+.that.boris.berk:after { background-image: url('boris.png'); }
+.that.davis.berk:after { background-image: url('davis.png'); }
+.that.gove.berk:after { background-image: url('gove.png'); }
+.that.raab.berk:after { background-image: url('raab.png'); }
+
+#nonsense > div {
+	font-family: sans-serif;
+	color: white;
+	font-weight: bold;
+	position: absolute;
+	transition: transform 2s;
+	top: 225px;
+	left: 100px;
+	text-transform: uppercase;
+	user-select: none;
+	font-size: 30px;
+	width: 100px;
+	text-align: center;
+}
+
+#score {
+	pointer-events: none;
+	z-index: 100;
+	position: absolute;
+	font-family: sans-serif;
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	right: 10px;
+	bottom: 10px;
+	text-align: right;
+	width: 200px;
+}
+
+#overlay {
+	z-index: 200;
+	position: absolute;
+	font-family: sans-serif;
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	box-sizing: border-box;
+	padding: 2em;
+	overflow: auto;
+}
+
+body.game-on #overlay,
+body:not(.game-over) #game-over
+body:not(.unstarted) #intro
+{ display: none; }
