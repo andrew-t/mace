@@ -77,7 +77,8 @@ document.addEventListener('DOMContentLoaded', e => {
 			nonsenseContainer.appendChild(nonsense);
 			setTimeout(() => nonsense.style.transform =
 				`translate(${Math.random() * 800 - 250}px,
-					${Math.random() * 100 - 250}px)`,
+					${Math.random() * 100 - 230}px)
+				rotate(${Math.random() * 40 - 20}deg)`,
 				50);
 			if (nonsenseSpewed >= 500)
 				stopGame();

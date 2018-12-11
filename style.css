@@ -75,13 +75,14 @@ body { background: #000; }
 	color: white;
 	font-weight: bold;
 	position: absolute;
-	transition: transform 2s;
-	top: 225px;
-	left: 100px;
+	transition: transform 5s;
+	top: 115px;
+	left: -30px;
+	transform-origin: 50% 150px;
 	text-transform: uppercase;
 	user-select: none;
 	font-size: 30px;
-	width: 100px;
+	width: 400px;
 	text-align: center;
 }
 
