@@ -139,7 +139,7 @@ a:active, a:hover { color: #f00; }
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-size: 30px;
-	opacity: 0;
+	opacity: 1;
 	top: 85px;
 	left: -5px;
 }
@@ -147,7 +147,7 @@ a:active, a:hover { color: #f00; }
 	transition:
 		opacity 600ms,
 		background-position 600ms ease-out;
-	opacity: 1;
+	opacity: 0;
 	background-position:
 		calc(50% + 0 * 100px) calc(50% + 1 * 100px),
 		calc(50% + 0.5 * 100px) calc(50% + 0.8660254037844387 * 100px),

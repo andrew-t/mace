@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', e => {
 		mace.style.left = `${e.pageX}px`;
 	});
 
-	let lastSmash, lastSmashTime = 0, starsTimer;
+	let lastSmash, lastSmashTime = 0;
 	document.body.addEventListener('click', e => {
 		const now = Date.now();
 		if (now < lastSmashTime + 400) return;
@@ -50,10 +50,7 @@ document.addEventListener('DOMContentLoaded', e => {
 				particles.style.transform =
 					window.getComputedStyle(berks[standingBerk]).transform;
 				particles.classList.remove('go');
-				if (starsTimer) clearTimeout(starsTimer);
 				setTimeout(() => particles.classList.add('go'), 50);
-				starsTimer = setTimeout(() =>
-					particles.classList.remove('go'), 650);
 			}, 200);
 		}
 	});
