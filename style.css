@@ -118,7 +118,7 @@ body { background: #000; }
 }
 
 body.game-on #overlay,
-body:not(.game-over) #game-over
+body:not(.game-over) #game-over,
 body:not(.unstarted) #intro
 { display: none; }
 
