@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', e => {
 		mace.style.left = `${e.pageX}px`;
 	});
 
-	let lastSmash, lastSmashTime = 0;
+	let lastSmash, lastSmashTime = 0, starsTimer;
 	document.body.addEventListener('click', e => {
 		const now = Date.now();
 		if (now < lastSmashTime + 400) return;
@@ -47,6 +47,13 @@ document.addEventListener('DOMContentLoaded', e => {
 				console.log('you hit', e.target.className);
 				beenHit = true;
 				updateScore(++score);
+				particles.style.transform =
+					window.getComputedStyle(berks[standingBerk]).transform;
+				particles.classList.remove('go');
+				if (starsTimer) clearTimeout(starsTimer);
+				setTimeout(() => particles.classList.add('go'), 50);
+				starsTimer = setTimeout(() =>
+					particles.classList.remove('go'), 650);
 			}, 200);
 		}
 	});
@@ -71,15 +78,13 @@ document.addEventListener('DOMContentLoaded', e => {
 			++nonsenseSpewed;
 			const nonsense = document.createElement('div');
 			nonsense.style.transform =
-				window.getComputedStyle(berks[standingBerk]).transform;
-			nonsense.appendChild(document.createTextNode(
+				window.getComputedStyle(berks[standingBerk]).transform;			nonsense.appendChild(document.createTextNode(
 				brexitWords[~~(Math.random() * brexitWords.length)]));
 			nonsenseContainer.appendChild(nonsense);
 			setTimeout(() => nonsense.style.transform =
 				`translate(${Math.random() * 800 - 250}px,
 					${Math.random() * 100 - 230}px)
-				rotate(${Math.random() * 40 - 20}deg)`,
-				50);
+				rotate(${Math.random() * 40 - 20}deg)`, 50);
 			if (nonsenseSpewed >= 500)
 				stopGame();
 		}, 73);

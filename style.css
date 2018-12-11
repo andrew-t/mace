@@ -125,3 +125,40 @@ body:not(.unstarted) #intro
 
 a { color: #ff0; }
 a:active, a:hover { color: #f00; }
+
+#particles {
+	pointer-events: none;
+	width: 300px;
+	height: 300px;
+	z-index: 50;
+	position: absolute;
+	background-image:
+		url('star.svg'), url('star.svg'), url('star.svg'), url('star.svg'),
+		url('star.svg'), url('star.svg'), url('star.svg'), url('star.svg'),
+		url('star.svg'), url('star.svg'), url('star.svg'), url('star.svg');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 30px;
+	opacity: 0;
+	top: 85px;
+	left: -5px;
+}
+#particles.go {
+	transition:
+		opacity 600ms,
+		background-position 600ms ease-out;
+	opacity: 1;
+	background-position:
+		calc(50% + 0 * 100px) calc(50% + 1 * 100px),
+		calc(50% + 0.5 * 100px) calc(50% + 0.8660254037844387 * 100px),
+		calc(50% + 0.8660254037844386 * 100px) calc(50% + 0.5 * 100px),
+		calc(50% + 1 * 100px) calc(50% + 0 * 100px),
+		calc(50% + 0.8660254037844387 * 100px) calc(50% + -0.5 * 100px),
+		calc(50% + 0.5 * 100px) calc(50% + -0.8660254037844387 * 100px),
+		calc(50% + 0 * 100px) calc(50% + -1 * 100px),
+		calc(50% + -0.5 * 100px) calc(50% + -0.8660254037844388 * 100px),
+		calc(50% + -0.8660254037844385 * 100px) calc(50% + -0.5 * 100px),
+		calc(50% + -1 * 100px) calc(50% + -0 * 100px),
+		calc(50% + -0.8660254037844386 * 100px) calc(50% + 0.5 * 100px),
+		calc(50% + -0.5 * 100px) calc(50% + 0.8660254037844384 * 100px);
+}
